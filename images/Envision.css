@@ -1,0 +1,752 @@
+/********************************************
+   AUTHOR:  			Manzoor Ahmed
+   WEBSITE:   			http://www.Limozoor.com
+   TEMPLATE NAME:		LimoSite      	
+ *******************************************/
+ 
+/********************************************
+   HTML ELEMENTS
+********************************************/ 
+
+/* Top Elements */
+* {
+	margin: 0;
+	padding: 0;
+	width: auto;
+}
+
+body {
+	background:#FFFFFF;
+	color: #000000;
+	text-align: center;
+	font-size: 14px;
+	font-family: Verdana, Tahoma, arial, sans-serif;
+	line-height: 1.5em;
+}
+
+/* links */
+a, a:visited {
+	text-decoration: none;
+	color: #2180BC;
+	background: inherit;
+}
+a:hover {
+	color: #0066CC;
+	background: inherit;
+	text-decoration: underline;
+}
+
+/* headers */
+h1, h2, h3 {
+	color:#000000;
+	font-weight: normal; 		
+	
+}
+h1 {
+	font-size:14px;	
+	color:#006666;
+}
+h2 {
+	font-size: 120%;
+	text-transform: none;
+	color: #000000;
+}
+h3 {
+	font-size: 120%;
+	color: #666666; 
+}
+
+/* images */
+img {
+	padding: 1px;
+}
+img.float-right {
+  margin: 5px 0px 10px 10px;  
+}
+img.float-left {
+  margin: 5px 10px 10px 0px;
+}
+
+h1, h2, h3, p {
+	padding: 10px;		
+	margin: 0;
+}
+p{color:#000000;}
+ul, ol {
+	margin: 5px 20px;
+	padding: 0 20px;
+}
+ul li {
+	color:#339999;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:12px;
+}
+
+
+/* start - table */
+table {
+	border-collapse: collapse;
+	margin: 0px;	
+	width:100%;
+}
+th strong {
+	color: #fff;
+}
+th {
+	background: #93BC0C;
+	height: 29px;
+	padding-left: 12px;
+	padding-right: 12px;
+	color: #FFF;
+	text-align: left;
+	
+}
+tr {
+	height: auto;
+}
+td {
+	padding-left: 11px;
+	padding-right: 11px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+td.first,th.first {
+	border-left: 0px;
+}
+tr.row-a {
+	background: #F8F8F8;
+}
+tr.row-b {
+	background: #EFEFEF;
+}
+/* end - table */
+
+/* form elements */
+form {
+	margin:10px 10px 10px 0px; padding: 0 5px;
+	border: 0px solid #f2f2f2; 
+	background-color: #C3EBF7; 
+}
+label {
+	display:block;
+	font-weight:bold;
+	margin:5px 0;
+}
+input {
+	padding:2px;
+	border:1px solid #eee;
+	font: normal 1em Verdana, sans-serif;
+	color:#777;
+}
+textarea {
+	width:400px;
+	padding:2px;
+	font: normal 1em Verdana, sans-serif;
+	border:1px solid #eee;
+	height:100px;
+	display:block;
+	color:#777;
+}
+input.button { 
+	font: bold 12px Arial, Sans-serif; 
+	height: 24px;
+	margin: 0;
+	padding: 2px 3px; 
+
+	/**background: #8EB50C url(button-bg.jpg) repeat-x 0 0;*/
+	background-color:#E93701;
+	border: none;
+}
+
+/* search form */
+.searchform {
+	background-color: transparent;
+	border: none;	
+	margin: 0; padding: 5px 0 15px 0;	
+	width: 190px;	
+}
+.searchform p { margin: 0; padding: 0; }
+.searchform input.textbox { 
+	width: 120px;
+	color: #777; 
+	height: 18px;
+	padding: 2px;	
+	border: 1px solid #E5E5E5;
+	vertical-align: top;
+}
+.searchform input.button { 
+	width: 60px;
+	height: 24px;
+	padding: 2px 5px;
+	vertical-align: top;
+}
+
+/********************************************
+   LAYOUT
+********************************************/ 
+#wrap {
+	width: 800px;
+	margin: 0 auto;
+	text-align: left;
+	background-image: none;
+	background-repeat: repeat-y;
+	background-position: center top;
+}
+#content-wrap {
+	clear: both;
+	width: 760px;
+	padding: 0; 
+	margin: 10px auto;
+}
+#header {
+	width: 820px;
+	position: relative;
+	height: 310px;
+	padding: 0;
+	color: #FFF;
+	background-color: #FFFFFF;
+	background-image: url(finallogocorner.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	border: solid;
+	border-width: 1px;
+	/* font-size: 14px; */
+}
+#header h1#logo-text {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font: bolder 44px 'Trebuchet MS', Arial, Sans-serif;
+	letter-spacing: -2px;
+	color: #FFFFFF;
+	text-transform: none;
+	/* change the values of top and left to adjust the position of the logo*/
+	top: 17px;
+	left: 36px;
+	width: 769px;
+	height: 83px;
+}
+#header h2#slogan {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font: normal 12px 'Trebuchet MS', Arial, Sans-serif;
+	text-transform: none;
+	color: #FF0000;
+	/* change the values of top and left to adjust the position of the slogan*/
+	top: 112px;
+	left: 33px;
+	width: 194px;
+	height: 22px;
+}
+
+/* header links */
+#header #header-links {
+	position: absolute;
+	top: 64px;
+	right: 18px;
+	color: #C6DDEE;
+	font-size: 10px;
+	width: 270px;
+}
+#header #header-links a {	
+	color: #FFF;
+	text-decoration: none;	
+}
+#header #header-links a:hover {
+	color: #D4E59F;	
+}
+
+/* Menu */
+#menu {
+	padding: 0px 50px 0px 0px;
+	font: bold 12px/37px Verdana, Arial, Tahoma, Sans-serif;
+	height: 50px;
+	width: 800px;
+	background-color: #FEFFFF;
+}
+#menu ul {
+	float: right;
+	list-style: none;
+	margin:0; padding: 0;
+}
+#menu ul li {
+	display: inline;
+}
+#menu ul li a {
+	display: block;
+	float: left;
+	padding: 0 10px;
+	color: #000000;	
+	text-decoration: none;
+}
+#menu ul li.last a {
+	padding-right: 20px;	
+}
+#menu ul li a:hover {
+	color: #0099CC;	
+}
+#menu ul li#current a {	
+	color: #FF0000;
+}
+
+/* Main Column */
+#main {
+	float: left;
+	width: 72%;
+	padding: 0;
+	margin: 0 0 0 0px;
+	background-color: #FFFFFF;
+}
+#main h1 {
+	margin-top: 0px;
+	font: Bold 140% 'Trebuchet MS', Tahoma, Sans-serif;
+	color: #000000; 
+	padding: 5px 0 5px 10px;	
+}
+
+.post-footer {
+	background-color: #FAFAFA;
+	padding: 5px; margin: 20px 10px 0 10px;
+	border: 1px solid #f2f2f2;
+	font-size: 95%;	
+}
+
+.post-footer .comments {
+	
+	padding-left: 20px; margin: 0 10px 0 5px;
+}
+.post-footer .readmore {
+	background: url(page.gif) no-repeat left center;
+	padding-left: 20px; margin: 0 10px 0 5px;
+}
+
+/* Sidebar */	
+#sidebar {
+	float: right;
+	width: 26.5%;
+	padding: 0; margin: 0;	
+	color: #000000;	
+}	
+#sidebar h1 {
+	margin-top: 10px;
+	padding: 5px 5px; 
+	font: bold 1.4em 'Trebuchet MS', Tahoma, Sans-serif;
+	color: #000000;	
+}
+#sidebar ul.sidemenu {
+	list-style: none;
+	text-align: left;
+	margin: 7px 4px 8px 0; padding: 0;
+	text-decoration: none;		
+	background: url(dots.jpg) repeat-x left top;
+}
+#sidebar ul.sidemenu li {
+	list-style: none;
+	background: url(dots.jpg) repeat-x left bottom;
+	padding: 4px 0 4px 5px;
+	margin: 0 2px;	
+	color: #68774A;	
+}
+* html body #sidebar ul.sidemenu li {
+	height: 1%;
+}
+#sidebar ul.sidemenu li a {
+	text-decoration: none;	
+	background-image: none;	
+	color: #666666;			
+}
+#sidebar ul.sidemenu li a:hover {	
+	color: #1773BC;	
+}
+
+/* Footer */	
+#footer {
+	color: #C6DDEE;
+	background: #CCC url(footer1.gif) no-repeat center top;
+	clear: both;
+	width: 820px;
+	height: 120px;
+	text-align: center;	
+	font-size: 92%;	
+}
+#footer a { 
+	color: #FFF;
+	text-decoration: none; 
+}
+
+/* alignment classes */
+.float-left  { float: left; }
+.float-right { float: right; }
+.align-left  { text-align: left; }
+.align-right { text-align: right; }
+
+/* display and additional classes */
+.clear { clear: both; }
+/*footerbox is used for vehical types and services*/
+.footbox{
+    display:block;
+	float:left;
+	width:225px;
+	margin:0 20px 0 0;
+	padding:0;
+}
+.footboxleft{
+    display:block;
+	float:right;
+	width:225px;
+	margin:20 0px 0 0;
+	padding:0;
+}
+
+/*Index page style and divs*/
+
+.style38 {font-weight: bold;}
+
+em{color:#0066FF;
+font-family:Arial, Helvetica, sans-serif;
+font-size:13px;}
+i{
+color:#000000;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+
+}
+strong{font-family:"Times New Roman", Times, serif, Abstract, "Across The Stars", "MS Serif", Nauert, Nasalization, Nyala, Occidental, Onyx, "Outer zone", "Palace Script MT", "Palatino Linotype", Papyrus, Parchment, Randi;
+color:#009999;
+font-size:12px;}
+.intro {height : auto;
+padding : 2px;color : #FF0000;
+float : left;
+width : 268px;
+border-bottom : 1px solid #096F77;
+border-top : 1px solid #096F77;
+background:#000000;}
+
+.intro2 {
+height : auto;
+padding : 2px;color:#006699;
+float : right;
+width : 267px;
+border-bottom : 1px solid #096F77;
+border-top : 1px solid #096F77;
+background:#000000;}
+.intro ul li
+{color:#339999;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;}
+.intor2 ul li
+{color:#99FF00;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:14px;}
+.linkfooter{width:100%;
+height:auto;
+color:#006666;
+font-family:"Courier New", Courier, monospace;
+font-size:12px;}
+
+.style39 {color: #006666; font-size:16px;}
+/*
+#Layer1 {position:absolute;
+	width:183px;
+	height:115px;
+	background-color:#FFFFFF;
+	layer-background-color:#FFFFFF;
+	border:1px none #000000;
+	z-index:1;
+	left: 189px;
+}
+*/
+#marqueecontainer{
+position: relative;
+width:auto; /*marquee width */
+height: 300px; /*marquee height */
+background-color: white;
+overflow: hidden;
+border: 0px ;
+padding: 2px;
+padding-left: 4px;
+}
+/*/////////////////////Index page Css////////////////////////////////////*/
+
+/*CSS for 2 demos on the page*/
+#orbs li{
+width: 65px; /*width of image container. Should be wider than contained images (before bubbling) */
+height:60px; /*height of image container. Should be taller than contained images (before bubbling) */
+}
+
+#orbs li img{
+width: 55px; /*width of each image before bubbling*/
+height: 60px; /*height of each image*/
+}
+
+#squares li{
+width: 45px; /*width of image container. Must be wider than contained images (before bubbling) */
+height:40px; /*height of image container. Must be taller than contained images (before bubbling) */
+}
+
+#squares li img{
+width: 31px; /*width of each image before bubbling*/
+height: 31px; /*height of each image*/
+}
+
+
+.mypets{ /*header of 1st demo*/
+cursor: hand;
+cursor: pointer;
+padding: 2px 5px;
+border: 1px solid gray;
+background: #E1E1E1;
+}
+
+.openpet{ /*class added to contents of 1st demo when they are open*/
+background: yellow;
+}
+
+.technology{ /*header of 2nd demo*/
+cursor: hand;
+cursor: pointer;
+font: bold 14px Verdana;
+margin: 10px 0;
+}
+
+
+.openlanguage{ /*class added to contents of 2nd demo when they are open*/
+color: green;
+}
+
+.closedlanguage{ /*class added to contents of 2nd demo when they are closed*/
+color: red;
+}
+#marqueecontainer{
+position: relative;
+width:auto; /*marquee width */
+height: 50px; /*marquee height */
+background-color: white;
+overflow: hidden;
+border: 0px ;
+padding: 2px;
+padding-left: 4px;
+}
+Curly box 
+
+.curlycontainer{
+border: 1px solid #b8b8b8;
+margin-bottom: 1em;
+width: 300px;
+}
+
+.curlycontainer .innerdiv{
+background: transparent url(images/brcorner.gif) bottom right no-repeat;
+position: relative;
+left: 2px;
+top: 2px;
+padding: 1px 4px 15px 5px;
+}
+
+
+.style38 {font-weight: bold;}
+em{color:#999999;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;}
+i{
+color:#000000;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+
+}
+strong{font-family:"Times New Roman", Times, serif, Abstract, "Across The Stars", "MS Serif", Nauert, Nasalization, Nyala, Occidental, Onyx, "Outer zone", "Palace Script MT", "Palatino Linotype", Papyrus, Parchment, Randi;
+color:#009999;
+font-size:12px;}
+.intro {height : auto;
+padding : 2px;color : #FF0000;
+float : left;
+width : 268px;
+border-bottom : 0px;
+border-top : 0px;
+background:white;}
+
+.intro2 {
+height : auto;
+padding : 2px;color:#006699;
+float : right;
+width : 267px;
+border-bottom : 0px;
+border-top : 0px;
+background:white;}
+.intro ul li
+{color:#339999;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;}
+.intor2 ul li
+{color:#99FF00;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:14px;}
+.linkfooter{width:100%;
+height:auto;
+color:#006666;
+font-family:"Courier New", Courier, monospace;
+font-size:12px;}
+
+.style39 {color: #000000; font-size:16px;}
+#Layer1 {position:absolute;
+	width:183px;
+	height:115px;
+	background-color:#FFFFFF;
+	layer-background-color:#FFFFFF;
+	border:1px none #000000;
+	z-index:1;
+	left: 189px;}
+	/*CSS for example Accordion #hc1*/
+
+#hc1 li{
+margin:0 3px 0 0; /*Spacing between each LI container*/
+}
+
+#hc1 li .hpanel{
+padding: 5px; /*Padding inside each content*/
+background: lightblue;
+}
+
+/*CSS for example Accordion #hc2*/
+
+#hc2 li{
+margin:0 0 0 0; /*Spacing between each LI container*/
+border: 12px solid black;
+}
+
+#hc2 li .hpanel{
+padding: 5px; /*Padding inside each content*/
+background: #E2E9FF;
+cursor:default;
+cursor: pointer;
+}
+.man{
+	font-family: 'Oswald', sans-serif;
+	size:16px;
+	color:#000000;
+	
+}
+.man1{
+font-family: 'Oswald', sans-serif;
+size:11px;
+color:#FF0000;
+}
+#main5{
+width:50%;
+float:left;
+padding:10px 10px 10px 90px;
+
+}
+/* used for homeoage*/
+
+.user_info{
+	width:750px;
+	height:auto;
+	padding:10px;
+	background-color:#FFFFFF;
+}
+.name{
+	width:auto;
+	height:50px;
+	padding: 0px 10px 10px 30px;
+	background-color: #FFFFFF;
+
+}
+
+.comp_info{
+	width:300px;
+	height:50px;
+	float:none;
+	padding:0px;
+	text-align: center;
+	font-weight: 900;
+	color: #0099CC;
+	font-style: normal;
+}
+.prof_menue{
+width:205px;
+height:300px;
+padding:10px 0px 10px 10px;
+float:right;
+background-color:#993300;
+}
+
+.content{
+	width:auto;
+	float:left;
+	height:300px;
+	background-color:#000000;
+	padding:10px 10px 0px 50px;
+}
+.content1{
+	width:auto;
+	float:left;
+	height:300px;
+	background-color:#999999;
+	padding:10px 10px 0px 50px;
+}
+
+.user_pic{
+	width:100px;
+	height:100px;
+	padding:5px;
+	float:left;
+	background-color: #009999;
+}
+
+.user_mass_info{
+	width:370px;
+	float:left;
+	height:auto;
+	padding:10px;
+	background-color: #999999;
+}
+.content_holder{
+width:800px;
+height:auto;
+}
+.top_holder{
+width:800px;
+height:50px;
+}
+.name_welcome{
+width:250px;
+height:50px;
+padding:0px;
+}
+.logout{
+	width:280px;
+	height:50px;
+	text-align: right;
+	font-size: 14px;
+	font-weight: 600;
+}
+.tiny{
+	width:20px;
+	height:20px;
+	padding:10px;
+	float:left;
+	background-color: #FFFFFF;
+}
+
+.gray{
+	margin:10px 10px 10px 0px; padding: 0 5px;
+	border: 0px solid #f2f2f2; 
+	background-color: #D4D4D4; 
+}
+form.input:shadow{
+	background: #dfe9ec;
+	color: #414848;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+}
+
+form.input:hover{
+background: #dfe9ec;
+	color: #414848;
+}
+form.input:focus{
+background: #dfe9ec;
+	color: #414848;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Limozoor mobile reservation form</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <link type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+   <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" /> 
+  <script src="jQuery.ui.datepicker.js"></script>
+  <script src="jquery.ui.datepicker.mobile.js"></script>
+   
+<!--Cal ---->
+ <script>
+<script>
+  //reset type=date inputs to text
+  $( document ).bind( "mobileinit", function(){
+    $.mobile.page.prototype.options.degradeInputs.date = true;
+  });	
+  $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+</script>
+<!--end -->
+   
+   
+</head> 
+
+<body>  
+<!--Home-->
+<div data-role="page" id="first" data-theme="b">
+ 
+        <div data-role="header">
+                <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+		 <a href="#" data-role="button" data-icon="plus" data-theme="e">Sign in</a>
+		<a href="#" data-role="button" data-icon="delete" data-theme="e">Register</a>
+		<a href="#" data-role="button" data-icon="refresh" data-iconpos="notext" data-theme="e" data-iconshadow="false" data-inline="true">Refresh</a>
+		</div>
+        </div><!-- /header -->
+ 
+        <div data-role="content">       
+                <p><a href="#reservation" data-role="button" data-theme="e" data-icon="plus">Reservation</a></p>
+		<p><a href="#" data-role="button" data-theme="e" data-icon="check">Reservation Status</a></p>
+		<p><a href="#" data-role="button" data-theme="e" data-icon="edit">Contact</a></p>
+        </div><!-- /content -->
+ 
+        <div data-role="footer" data-positon="fixed" class="ui-bar">
+                <h4>Page Footer1</h4>
+        </div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Reservation -->
+<div data-role="page" id="reservation" data-add-back-btn="true" data-theme="e">
+ 
+        <div data-role="header">
+                <h1>LimoZoor Reservation form</h1>
+        </div><!-- /header -->
+ 
+        <div data-role="content">       
+                
+		<form method="POST" name="contact_form"
+		action="/reservation.php">
+		
+		<label class="personal">Personal Information</label>
+		
+		<label>Title</label>
+		<select name="title" id="title" data-native-menu="false">
+			<option value="" selected='selected'>Select</option>
+			<option value="Mr." >Mr</option>
+			<option value="Mrs." >Mrs</option>
+			<option value="Miss." >Miss</option>
+		</select>
+
+		<label for='firstname'>First Name </label>
+		<input type="text" name="firstname" value='' />
+		<label for='email'>Last Name </label>
+		
+		<input type="text" name="lastname" value='' />
+
+		<label for='email'>Phone <span class="red">*</span> </label>
+		<input type="text" name="pphone" id="pphone" value="" />
+
+		<label for='email'>Email </label>
+		<input type="email" name="eemail" id="eemail" value='' />
+		<label class="personal">Vehicle Information</label>
+		<label>Vehicle <span class="red">*</span> </label>
+
+		<select name="cars" data-native-menu="false" >
+			<option value="" selected='selected'>Select</option>
+			<option value="Town Car"  >Town Car</option>
+			<option value="Stretch Limo" >Stretch Limo</option>
+			<option value="SUV" >SUV</option>
+		</select>
+			
+		<label>Passengers</label>
+			<select name="passangers" data-native-menu="false">
+				<option value="" selected='selected'>Select</option>
+				<option value="1" >1</option>
+				<option value="2" >2</option>
+				<option value="3" >3</option>
+				<option value="4" >4</option>
+				<option value="5" >5</option>
+				<option value="6" >6</option>
+				<option value="7" >7</option>
+				<option value="8" >8</option>
+				<option value="9" >9</option>
+				<option value="10" >10</option>
+			</select>
+
+		<label class="personal" id="m">Is this an airport pick up?</label>
+		
+		<label>
+		<input type="checkbox" name="first" id="first" value="yes" />Yes
+		</label>
+		
+		<label>Pick up address <span class="red">*</span></label>
+		<input type="text" name="pickupaddress"  value=" " id="pickupaddress" />
+
+		<label>City  <span class="red">*</span></label>
+		<input type="text" name="pickupcity" value=""  id="pickupcity" />
+	
+		<label>Zip Code <span class="red">*</span></label>
+		<input type="text" name="pickupzipcode" value="" id="pickupzipcode" />
+		
+		
+		<label for="date">Date</label>
+		<input type="date" name="date" id="date" value="" />	
+			
+		
+<label>Pick up time</label>
+
+	        <select name="hour" data-native-menu="false"> 
+			<option value=""   selected='selected'>Hour</option>
+			<option value="01" >01</option>
+			<option value="02" >02</option>
+			<option value="03" >03</option>
+			<option value="04" >04</option>
+			<option value="05" >05</option>
+			<option value="06" >06</option>
+			<option value="07" >07</option>
+			<option value="08" >08</option>
+			<option value="09" >09</option>
+			<option value="10" >10</option>
+			<option value="11" >11</option>
+			<option value="12" >12</option>
+		</select>
+		
+                <select name ="minute" data-native-menu="false">
+			<option value=""   selected='selected'>Minute</option>
+			<option value="00" >00</option>
+			<option value="05" >05</option>
+			<option value="10" >10</option>
+			<option value="15" >15</option>
+			<option value="20" >20</option>
+			<option value="25" >25</option>
+			<option value="30" >30</option>
+			<option value="35" >35</option>
+			<option value="40" >40</option>
+			<option value="45" >45</option>
+			<option value="50" >50</option>
+			<option value="55" >55</option>
+	</select>
+
+	 <select name="ampm" id="ampm" data-native-menu="false">
+			<option value="" selected='selected'>AM/PM</option>
+			<option value="AM" >AM</option>
+			<option value="PM" >PM</option>
+	</select>
+
+ <label class="personal">Drop off Information</label>
+<label id="second">Airport drop off?</label>
+<label>Airport drop off.</label>
+<fieldset data-role="controlgroup">
+<input type="checkbox"  name="secondd" id="secondd" value="yes" />
+</fieldset>
+<label>Drop  off address</label>
+<input type="text" name="pickupaddress1"  value=" " id="pickupaddress1" />
+<label>City </label>
+<input type="text" name="pickupcity1" value=""  id="pickupcity1" />
+<label>Zip Code</label>
+<input type="text" name="pickupzipcode1" value="" id="pickupzipcode1" />
+<label>Number of stops</label>
+
+	<select name="stops" id="stops" data-native-menu="false">
+		<option value=""selected='selected'>Select</option>
+		<option value="0" >0</option>
+		<option value="1" >1</option>
+		<option value="2" >2</option>
+		<option value="3" >3</option>
+		<option value="More than 3" >4</option>
+	</select>
+
+</form>     
+        </div><!-- /content -->
+ 
+        <div data-role="footer" data-position="fixed">
+                <h4>Page Footer2</h4>
+        </div><!-- /footer -->
+</div><!-- /page -->
+<!-- JavaScript placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+User-agent: *
+
+Disallow: /images/
+Disallow: /_notes/
+Disallow: /phone.php
+Disallow: /contacted.php
+Disallow: /reservation1.php
+Disallow: /javacode.js
+Disallow: /thank-you.html
+Disallow: /valid.js
+Disallow: /captcha_code_file.php
+Disallow: /monofont.ttf
+Disallow: /error.php
+Disallow: /login/
+Disallow: /mobile/
